@@ -1,0 +1,246 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "abrir mambo",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "sair",
+            "Tudo pronto"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AddItensIntent",
+          "slots": [
+            {
+              "name": "itens",
+              "type": "AMAZON.Food",
+              "samples": [
+                "{itens}"
+              ]
+            }
+          ],
+          "samples": [
+            "{itens}",
+            "adicionar {itens}",
+            "Adicionar",
+            "Adicionar um item a minha lista",
+            "Adicionar um item",
+            "Adicionar {itens} a minha lista"
+          ]
+        },
+        {
+          "name": "VerListaIntent",
+          "slots": [],
+          "samples": [
+            "fale lista",
+            "fale minha lista",
+            "leia lista",
+            "leia minha lista",
+            "falar itens",
+            "falar produtos",
+            "falar minha lista",
+            "falar lista",
+            "falar",
+            "ouvir",
+            "ouvir minha lista",
+            "ouvir lista",
+            "ouvir produtos",
+            "ouvir itens",
+            "ver itens",
+            "ver produtos",
+            "ver",
+            "ver lista",
+            "ver minha lista"
+          ]
+        },
+        {
+          "name": "DeleteItemIntent",
+          "slots": [
+            {
+              "name": "itens",
+              "type": "AMAZON.Food"
+            }
+          ],
+          "samples": [
+            "remover item",
+            "remover",
+            "remover {itens}"
+          ]
+        },
+        {
+          "name": "IngredientsIntent",
+          "slots": [
+            {
+              "name": "addIngredients",
+              "type": "IngredientsSlot"
+            }
+          ],
+          "samples": [
+            "{addIngredients}",
+            "repetir os ingredientes",
+            "diga os ingredientes",
+            "leia os ingredientes",
+            "ouvir ingredientes",
+            "ver ingredientes",
+            "ler ingredientes",
+            "ingredientes"
+          ]
+        },
+        {
+          "name": "PreparosIntent",
+          "slots": [],
+          "samples": [
+            "ouvir o modo de preparo",
+            "leia o modo de preparo",
+            "diga o modo de preparo",
+            "ler modo de preparo",
+            "repetir modo de preparo",
+            "como fazer",
+            "modo de preparo"
+          ]
+        },
+        {
+          "name": "NotLoginMamboIntent",
+          "slots": [],
+          "samples": [
+            "não tenho",
+            "não tenho um login no mambo",
+            "não tenho um login",
+            "não tenho login",
+            "não tenho login mambo"
+          ]
+        },
+        {
+          "name": "YesLoginMamboIntent",
+          "slots": [],
+          "samples": [
+            "Uso emails diferentes",
+            "Uso outro email",
+            "Tenho login no Mambo",
+            "Já uso o Mambo",
+            "Já tenho",
+            "Já tenho login"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Não"
+              }
+            },
+            {
+              "name": {
+                "value": "Sim"
+              }
+            }
+          ],
+          "name": "AMAZON.Food"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "incluir ingredientes"
+              }
+            },
+            {
+              "name": {
+                "value": "adicionar ingredientes"
+              }
+            },
+            {
+              "name": {
+                "value": "incluir"
+              }
+            }
+          ],
+          "name": "IngredientsSlot"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "AddItensIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "itens",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1523332337639.1555536547917"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DeleteItemIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "itens",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1064370395008.456021958809"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.762833513544.1046403423884",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual item deseja remover da sua lista?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1523332337639.1555536547917",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Basta falar o nome de um item como ovos, e seu produto estará em sua lista."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1064370395008.456021958809",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Me fale qual item deseja remover?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "37"
+}
